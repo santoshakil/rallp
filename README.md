@@ -58,29 +58,53 @@ Lazy futures:           0.99μs vs 1.56μs (1.57x faster) ✅
 
 ```
 rallp/
-├── benchmarks/          # Performance comparison tests
-│   └── 01_allocation_patterns.dart
-├── examples/           
-│   ├── dart/           # Dart implementation examples
-│   └── rust/           # Equivalent Rust examples
-├── docs/               
-│   └── FINDINGS.md     # Research findings and analysis
-├── tests/              # Test suites
-└── utils/              # Helper utilities
+├── docs/
+│   ├── patterns/       # Language-agnostic pattern documentation
+│   │   ├── allocation.md      # Memory allocation strategies
+│   │   ├── zero_copy.md       # Zero-copy techniques
+│   │   ├── cache_locality.md  # Data layout optimization
+│   │   ├── async.md           # Async/await patterns
+│   │   ├── concurrency.md     # Parallelism analysis
+│   │   └── ownership.md       # Ownership model analysis
+│   └── theory/         # Theoretical foundations
+├── languages/          # Language-specific implementations
+│   ├── dart/          # ✅ Complete
+│   │   ├── benchmarks/
+│   │   └── README.md
+│   ├── python/        # 🔄 In Progress
+│   ├── javascript/    # 📋 Planned
+│   ├── go/           # 📋 Planned
+│   ├── java/         # 📋 Planned
+│   ├── csharp/       # 📋 Planned
+│   └── swift/        # 📋 Planned
+├── benchmarks/        # Standardized benchmark definitions
+│   └── suite/         # Cross-language benchmark suite
+└── results/          # Performance comparison data
 ```
 
 ## 🚀 Quick Start
 
-### Run Benchmarks
+### Choose Your Language
 
+#### Dart (Complete)
 ```bash
-# Run allocation pattern benchmarks
+cd languages/dart
 dart benchmarks/01_allocation_patterns.dart
+dart benchmarks/02_concurrency_patterns.dart
+dart benchmarks/03_zero_copy_patterns.dart
+dart benchmarks/04_async_patterns.dart
+```
 
-# Watch for detailed output including:
-# - Performance comparisons
-# - Memory pressure tests
-# - Cache locality analysis
+#### Python (Coming Soon)
+```bash
+cd languages/python
+python benchmarks/allocation_patterns.py  # TODO
+```
+
+#### JavaScript (Planned)
+```bash
+cd languages/javascript
+node benchmarks/allocation_patterns.js   # TODO
 ```
 
 ## 🔍 Research Areas
