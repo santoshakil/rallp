@@ -1,0 +1,47 @@
+# Dart
+.dart_tool/
+.packages
+build/
+pubspec.lock
+*.dart.js
+*.dart.js.map
+*.dart.js.deps
+*.info.json
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Testing
+coverage/
+test/.test_coverage.dart
+
+# Documentation
+doc/api/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# OS generated
+Thumbs.db
+.DS_Store
+
+# Build outputs
+/build/
+/out/
+
+# Dependencies
+node_modules/
+vendor/
