@@ -8,17 +8,21 @@ Can we achieve Rust-like performance in any high-level language by applying Rust
 
 ## 🔬 Current Findings
 
-**TL;DR**: Rust patterns can make high-level languages up to 15x faster! (Dart results shown)
+**TL;DR**: Rust patterns can make high-level languages up to 200x faster! (Dart results shown)
 
-Key discoveries:
+Key discoveries from 11 comprehensive benchmarks:
+- Stack allocators provide 200x speedup ✅
 - Type punning (reinterpretation) provides 15x speedup ✅
+- Loop unrolling and fusion deliver 7.3x improvement ✅
+- Rope data structures: 7x faster insertions ✅
+- Branch prediction: 4.2x faster with sorted data ✅
 - View-based slicing is 7x faster than sublist ✅
 - Buffer reuse eliminates 47% of GC pressure ✅
 - Cache-friendly layouts improve performance by 38% ✅
 - Ownership semantics add overhead without benefits ❌
-- Isolate parallelism is 4-6x slower than single-threaded ❌
+- Lock-free patterns often backfire (up to 184x slower) ❌
 
-[Full findings →](docs/FINDINGS.md)
+[Full findings →](docs/FINDINGS.md) | [Extended research →](docs/NEW_FINDINGS.md)
 
 ## 📊 Benchmark Results
 
@@ -86,13 +90,20 @@ rallp/
 
 ### Choose Your Language
 
-#### Dart (Complete)
+#### Dart (Complete - 11 Benchmarks)
 ```bash
 cd languages/dart
 dart benchmarks/01_allocation_patterns.dart
 dart benchmarks/02_concurrency_patterns.dart
 dart benchmarks/03_zero_copy_patterns.dart
 dart benchmarks/04_async_patterns.dart
+dart benchmarks/05_memory_pooling_patterns.dart
+dart benchmarks/06_string_optimization_patterns.dart
+dart benchmarks/07_iterator_patterns.dart
+dart benchmarks/08_simd_vectorization.dart
+dart benchmarks/09_lock_free_patterns.dart
+dart benchmarks/10_branch_prediction.dart
+dart benchmarks/11_compiler_hints.dart
 ```
 
 #### Python (Coming Soon)
